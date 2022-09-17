@@ -9,10 +9,11 @@ import { Advertisement } from '../models';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-   advertisement: Advertisement;
+
+  advertisement: Advertisement | undefined;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }
-  
+
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.http.get<Advertisement>('api/advertisements/' + params['id'])

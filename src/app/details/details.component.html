@@ -1,23 +1,53 @@
-<ng-container>
+<ng-container *ngIf="advertisement">
 
-<h1>{{advertisement.id}}</h1>
-<div class="container">
-    <div class="row">
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
+  <div class="row">
+    <div class="col-md">
+      <h1>{{advertisement.city.name}}</h1>
+    </div>
+    <div class="align-self-end">
+      <h1>{{advertisement.price}}M Ft</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{advertisement.address}}
     </div>
   </div>
 
   <hr>
 
+
+  <div class="container">
+    <div class="row">
+      <h6 class="col">Alapterület</h6>
+      <h6 class="col">Szobák</h6>
+      <h6 class="col">Típus</h6>
+      <h6 class="col">Építés éve</h6>
+    </div>
+    <div class="row">
+      <div class="col">{{advertisement.size}} m2</div>
+      <div class="col">{{advertisement.room}} + {{advertisement.halfRoom}}</div>
+      <div class="col">{{advertisement.advertisementType}}</div>
+      <div class="col">{{advertisement.buildDate}}</div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center pt-3">
+    <img class="images" [src]="advertisement.imageUrl" />
+  </div>
+
+  <h1>Leírás</h1>
+
+
+  <div class="container">
+    <div class="row">
+      <div>{{advertisement.description}}</div>
+      <a [routerLink]="['../../edit', advertisement.id]" class="nav-link pl-0">Szerkesztés</a>
+      <a routerLink="{{['/']}}" class="nav-link pl-0">Vissza</a>
+
+    </div>
+
+  </div>
+
+
 </ng-container>
-
-
-
