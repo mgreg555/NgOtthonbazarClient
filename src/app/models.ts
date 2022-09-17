@@ -24,3 +24,21 @@ export enum AdvertisementType {
     price: number,
     size: number,
    }
+
+   export class Filter {
+    cityId?: number;
+    cityName?: string;
+   
+    priceMin?: number;
+    priceMax?: number;
+   
+    sizeMin?: number;
+    sizeMax?: number;
+   
+    roomMin?: number;
+    roomMax?: number;
+   
+    page?: number;
+    pageSize?: number;
+   }
+   

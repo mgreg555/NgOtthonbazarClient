@@ -11,11 +11,7 @@ import { Advertisement } from './models';
 export class AppComponent implements OnInit {
   title = 'otthonbazar';
   navBarCollapsed: boolean = true;
-  constructor(private http: HttpClient) { }
-  advertisements: Advertisement[] = [];
+  createActive: any
   ngOnInit() {
-    this.http.get<Advertisement[]>('/api/advertisements').subscribe(resp =>
-      this.advertisements = resp
-    );
   }
 }
